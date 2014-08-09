@@ -36,6 +36,14 @@ function! cmus:next()
     echo "Playing " . cmus:get_song_info()
 endfunction
 
+function! cmus:forward()
+    let result = system('cmus-remote --seek +5')
+endfunction
+
+function! cmus:back()
+    let result = system('cmus-remote --seek -5')
+endfunction
+
 function! cmus:previous()
     let result = system('cmus-remote --prev')
     echo "Playing " . cmus:get_song_info()
